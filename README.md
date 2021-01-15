@@ -46,7 +46,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+function(event)
+console.log(event allows you to see the details available when event was called(for example click))
 ```
 
 ## Deliverable 2: Like Button

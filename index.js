@@ -60,13 +60,72 @@ animalToRemove.remove()
 
 /***** Deliverable 1 *****/
 function toggleColor(element) {
-    if (element.style.color === "green") {
+    if (element.style.color === "red") {
         element.style.color = "black"
     } else {
-        element.style.color = "green"
+        element.style.color = "red"
     }
 }
 
+
+header.addEventListener("click", function()
+{
+    toggleColor(header)
+})
+
+// header.addEventListener("click", function(event){
+//     console.log(event)
+//      if event.target === header
+//      toggleColor(header)
+// })
+// header.addEventListener("click",function(event){
+// // console.log(event)
+//     console.log(event.target === header)
+//     event.target.style.color = "blue"
+//     //  event.target.toggleColor
+// }
+// )
 /***** Deliverable 2 *****/
 
+let like = document.querySelector('.like-button')
+//  let likeCount = traveler.likes
+like.addEventListener('click', function(){
+    // let likeCount = traveler.likes
+    // console.log(e)
+    // likeCount += 1
+    // traveler.likes += 1
+    likes.textContent = `${traveler.likes += 1} Likes`
+}
+)
+
 /***** Deliverable 3 *****/
+
+// let form = document.querySelector('form')
+// let formId = form.id
+// function formSubmit(event) {
+//     form.content = document.querySelector("#new-animal-sighting-form").link
+//     renderAnimalSightingPost(form.content)
+//     event.preventDefault;
+// }
+let form = document.querySelector('form')
+// let formId = form.id
+
+// let newFormSubmit = renderAnimalSightingPost(formSub)
+form.addEventListener('submit', function(event) {
+  
+    let speciesInput = form.species.value
+    let videoLink = form.link.value
+    let photoLink = form.photo.value
+    let descriptionInput = form.description.value 
+
+    event.preventDefault();
+    let formData = {
+        species: speciesInput,
+        video: videoLink,
+        photo:photoLink,
+        description: descriptionInput
+    }
+
+    renderAnimalSightingPost(formData)
+    event.target.reset()
+})
